@@ -1,7 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}Lista de Tarefas{% endblock %}
+{% block title %}Task List{% endblock %}
 
 {% block content %}
-<h1>Aqui é a lista de tarefas</h1>
+<div class="offset-1 col-10 list-div">
+    <h1>Task List</h1>
+    <div class="col-2 add-div">
+        <i class="fas fa-plus"></i> Add Task
+    </div>
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" name="search" id="search" placeholder="Enter the task name to search">
+        <i class="fas fa-search"></i>
+    </div>
+    <ul class="task-list"></ul>
+        <li class="task-item">
+            <span>Task Title</span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+        <li class="task-item">
+            <span>Task Title</span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+        <li class="task-item">
+            <span>Task Title</span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+        <li class="task-item">
+            <span>Task Title</span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+        <li class="task-item">
+            <span>Task Title</span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+</div>
 {% endblock %}
+
