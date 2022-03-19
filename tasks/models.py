@@ -1,7 +1,3 @@
-from pydoc import describe
-from random import choices
-from telnetlib import STATUS
-from turtle import title
 from django.db import models
 
 class Task(models.Model):
@@ -15,7 +11,7 @@ class Task(models.Model):
     description = models.TextField()
     done = models.CharField(
         max_length = 5,
-        choices=STATUS, 
+        choices=STATUS,
     )
     created_at = models.DateTimeField(auto_now_add=True )
     update_at = models.DateTimeField(auto_now=True)
