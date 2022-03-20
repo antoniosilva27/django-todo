@@ -1,16 +1,25 @@
 $(document).ready(function() {
 
     var deleteBtn = $('.delete-btn');
+    var searchBtn = $('#search-btn');
+    var searchForm = $('#search-form');
 
     $(deleteBtn).on('click', function(e) {
 
         e.preventDefault();
 
         var delLink = $(this).attr('href');
-        var result = confirm('Do you want to delete this task?')
+        var result = confirm('Do you want to delete this task?');
 
         if(result) {
             window.location.href = delLink;
         }
+
     });
+
+    $(searchBtn).on('click', function() {
+
+        searchForm.submit();
+    });
+
 });
