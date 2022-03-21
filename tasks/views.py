@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import HttpResponse
+from flask import got_request_exception
 from .forms import TaskForm
 from django.contrib import messages
 
@@ -70,9 +71,23 @@ def deleteTask(request, id):
     return redirect('/')
 
 @login_required
+def changeStatus(request, id):
+    task = get_object_or_404(Task, pk=id)
+
+    if task.done == 'doing':
+        task.done = 'done'
+    else:
+        task.done = 'doing'
+
+    task.save()
+
+    return redirect('/')
+
+@login_required
 def helloWorld(request):
     return HttpResponse('Hello World!')
     
 @login_required
 def yourName(request, name):
     return render(request, 'tasks/yourname.html', {'name':name})
+
