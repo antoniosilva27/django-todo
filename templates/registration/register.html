@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Sign in Task List{% endblock %}
+{% block title %}Sign Up Task List{% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <div class="card auth-card">
             <div class="card-body">
-                <h4 class="card-title text-center">Sign in Task List</h4>
+                <h4 class="card-title text-center">Sign Up Task List</h4>
+
                 <form method="post">
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
+                    
                     {{ form|crispy }}
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+
                 </form>
             </div>
         </div>
